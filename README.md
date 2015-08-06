@@ -1,0 +1,39 @@
+# DebianSetting
+
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+    <!-- 나눔 글꼴 매치 설정 -->
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>serif</string>
+        </test>
+        <edit name="family" mode="prepend" binding="strong">
+            <string>NanumGothic</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>sans-serif</string>
+        </test>
+        <edit name="family" mode="prepend" binding="strong">
+            <string>NanumGothic</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>sans</string>
+        </test>
+        <edit name="family" mode="prepend" binding="strong">
+            <string>NanumGothic</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test qual="any" name="family">
+            <string>monospace</string>
+        </test>
+        <edit name="family" mode="prepend" binding="strong">
+            <string>NanumGothicCoding</string>
+        </edit>
+    </match>
+</fontconfig>
