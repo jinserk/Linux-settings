@@ -37,3 +37,24 @@
         </edit>
     </match>
 </fontconfig>
+
+
+Package: *
+Pin: release a=stretch
+Pin-Priority: 1100 
+ 
+Package: *
+Pin: release a=stretch-updates
+Pin-Priority: 650
+
+Package: *
+Pin: release a=stretch-backports
+Pin-Priority: 600
+ 
+Package: *
+Pin: release a=testing
+Pin-Priority: 200
+ 
+Package: *
+Pin: release a=unstable
+Pin-Priority: 100
