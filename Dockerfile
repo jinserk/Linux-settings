@@ -21,7 +21,7 @@ RUN export uid=1000 gid=1000 && \
 RUN echo LANG="en_US.UTF-8" > /etc/default/locale
 
 # add port 22 for sshd
-RUN sed -ri "s/#Port/Port" /etc/ssh/sshd_config
+RUN sed -ri "s/#Port/Port/" /etc/ssh/sshd_config
 EXPOSE 22
 
 # add user jbaik
