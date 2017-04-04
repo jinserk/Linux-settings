@@ -1,0 +1,3 @@
+deb http://shell.ninthgate.se/packages/debian jessie main
+
+# deb https://downloads.plex.tv/repo/deb/ public main
