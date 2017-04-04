@@ -1,0 +1,10 @@
+#!/bin/bash
+
+for file in *.smi; do
+    filename=$(basename $file)
+    ext="${filename##*.}"
+    name="${filename%.*}"
+    iconv -f cp949 -t UTF-8 "$file" -o "$file.utf8"
+    mv "$file" "$file.cp949"
+    mv "$file.utf8" "$file"
+done
