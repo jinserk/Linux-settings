@@ -9,6 +9,7 @@ set nocompatible        " be iMproved, required
 " }}}
 " Vim Plug {{{
 call plug#begin('~/.vim/plugged')
+Plug 'vim-scripts/a.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sjl/badwolf'
