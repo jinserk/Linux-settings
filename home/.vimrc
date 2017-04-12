@@ -173,5 +173,12 @@ function! <SID>CleanFile()
     call cursor(l, c)
 endfunction
 " }}}
+" Diff {{{
+if &diff
+    set cursorline
+    map ] ]c
+    map [ [c
+endif
+" }}}
 "
 " vim:foldmethod=marker:foldlevel=0
