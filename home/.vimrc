@@ -1,8 +1,11 @@
 " vimrc based on Douglas Black
 "
-"   install Vim Plug first
-"   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+" 1. check you have git and vim latest version
+" 2. copy this file to $HOME/.vimrc
+" 3. install Minimalist Vim Plugin Manager
+"    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" 4. run vim and type :PlugInstall in normal mode
 "
 " Preset {{{
 set nocompatible        " be iMproved, required
@@ -14,6 +17,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sjl/badwolf'
 Plug 'rust-lang/rust.vim'
+Plug 'will133/vim-dirdiff'
 "Plug 'derekwyatt/vim-scala'
 "Plug 'janko-m/vim-test'
 "Plug 'keith/swift.vim'
@@ -60,6 +64,10 @@ set fillchars+=vert:┃
 set ignorecase          " ignore case when searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight all matches
+" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" next search
+nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <Bslash> :nohl<CR><Bslash>
 " }}}
 " Folding {{{
 "=== folding ===
