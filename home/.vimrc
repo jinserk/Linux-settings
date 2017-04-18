@@ -1,3 +1,4 @@
+cat ~/.vimrc
 " vimrc based on Douglas Black
 "
 " 1. check you have git and vim latest version
@@ -43,13 +44,16 @@ set tags+=~/.vim/tags
 " }}}
 " Spaces & Tabs {{{
 set tabstop=4           " 4 space tab
-set expandtab           " use spaces for tabs
 set softtabstop=4       " 4 space tab
 set shiftwidth=4
 set modelines=1
+"set expandtab           " use spaces for tabs
+set noexpandtab           " use spaces for tabs
+set autoindent
+set cindent
+set smartindent
 filetype indent on
 filetype plugin on
-set autoindent
 " }}}
 " UI Layout {{{
 set number              " show line numbers
