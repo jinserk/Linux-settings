@@ -1,4 +1,3 @@
-cat ~/.vimrc
 " vimrc based on Douglas Black
 "
 " 1. check you have git and vim latest version
