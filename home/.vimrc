@@ -13,11 +13,13 @@ set nocompatible        " be iMproved, required
 " Vim Plug {{{
 call plug#begin('~/.vim/plugged')
 Plug 'vim-scripts/a.vim'
+Plug 'vim-scripts/Smart-Tabs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'sjl/badwolf'
 Plug 'rust-lang/rust.vim'
 Plug 'will133/vim-dirdiff'
+Plug 'chrisbra/vim-diff-enhanced'
 "Plug 'derekwyatt/vim-scala'
 "Plug 'janko-m/vim-test'
 "Plug 'keith/swift.vim'
@@ -32,6 +34,7 @@ Plug 'will133/vim-dirdiff'
 call plug#end()
 " }}}
 " Colors {{{
+set t_Co=256
 syntax enable           " enable syntax processing
 colorscheme badwolf
 set termguicolors
@@ -51,6 +54,7 @@ set noexpandtab           " use spaces for tabs
 set autoindent
 set cindent
 set smartindent
+set copyindent
 filetype indent on
 filetype plugin on
 " }}}
@@ -191,5 +195,10 @@ if &diff
     map [ [c
 endif
 " }}}
-"
+" vim-diff-enhanced {{{
+" started In Diff-Mode set diffexpr (plugin not loaded yet)
+if &diff
+    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
+endif
+" }}}
 " vim:foldmethod=marker:foldlevel=0
