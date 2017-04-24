@@ -57,6 +57,8 @@ set smartindent
 set copyindent
 filetype indent on
 filetype plugin on
+vnoremap <Tab> >>
+vnoremap <S-Tab> <<
 " }}}
 " UI Layout {{{
 set number              " show line numbers
