@@ -36,7 +36,7 @@ call plug#end()
 " Colors {{{
 set t_Co=256
 syntax enable           " enable syntax processing
-colorscheme badwolf
+silent! colorscheme badwolf
 set termguicolors
 " }}}
 " Misc {{{
@@ -57,8 +57,8 @@ set smartindent
 set copyindent
 filetype indent on
 filetype plugin on
-vnoremap <Tab> >>
-vnoremap <S-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 " }}}
 " UI Layout {{{
 set number              " show line numbers
@@ -67,7 +67,8 @@ set nocursorline        " highlight current line
 set wildmenu
 set lazyredraw
 set showmatch           " higlight matching parenthesis
-set fillchars+=vert:┃
+set nowrap
+silent! set fillchars+=vert:┃
 " }}}
 " Searching {{{
 set ignorecase          " ignore case when searching
