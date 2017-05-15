@@ -16,6 +16,7 @@ Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/Smart-Tabs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-syntastic/syntastic'
 Plug 'sjl/badwolf'
 Plug 'rust-lang/rust.vim'
 Plug 'will133/vim-dirdiff'
@@ -118,9 +119,10 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_custom_ignore = '\vbuild/|dist/|venv/|target/|\.(o|swp|pyc|egg)$'
 " }}}
 " Syntastic {{{
-"let g:syntastic_python_flake8_args='--ignore=E501'
 "let g:syntastic_ignore_files = ['.java$']
-"let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501'
 " }}}
 " AutoGroups {{{
 augroup configgroup
@@ -133,8 +135,9 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal tabstop=2
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
-    autocmd BufEnter *.py setlocal tabstop=4
+	"autocmd BufEnter *.py setlocal tabstop=4
     autocmd BufEnter *.md setlocal ft=markdown
+    autocmd Filetype python setlocal ts=4 sts=4 sw=4 expandtab
 augroup END
 " }}}
 " Testing {{{
