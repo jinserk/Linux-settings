@@ -38,7 +38,7 @@ call plug#end()
 set t_Co=256
 syntax enable           " enable syntax processing
 silent! colorscheme badwolf
-set termguicolors
+silent! set termguicolors
 " }}}
 " Misc {{{
 set backspace=indent,eol,start
@@ -60,6 +60,8 @@ filetype indent on
 filetype plugin on
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set list
 " }}}
 " UI Layout {{{
 set number              " show line numbers
@@ -137,7 +139,10 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal softtabstop=2
 	"autocmd BufEnter *.py setlocal tabstop=4
     autocmd BufEnter *.md setlocal ft=markdown
-    autocmd Filetype python setlocal ts=4 sts=4 sw=4 expandtab
+    autocmd Filetype python setlocal ts=4 sts=4 sw=4 et ai pi si ci nolist
+    autocmd Filetype xml setlocal ts=2 sts=2 sw=2 et
+    autocmd BufEnter *.c,*.cc,*.cpp,*.h,*.hh,*.hpp setlocal ts=4 sts=0 sw=4 noet nosi ai pi ci cindent
+    autocmd Filetype netrw setlocal nolist
 augroup END
 " }}}
 " Testing {{{
