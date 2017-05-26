@@ -21,6 +21,7 @@ Plug 'sjl/badwolf'
 Plug 'rust-lang/rust.vim'
 Plug 'will133/vim-dirdiff'
 Plug 'chrisbra/vim-diff-enhanced'
+Plug 'scrooloose/nerdtree'
 "Plug 'derekwyatt/vim-scala'
 "Plug 'janko-m/vim-test'
 "Plug 'keith/swift.vim'
@@ -61,7 +62,7 @@ filetype plugin on
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
-set list
+set nolist
 " }}}
 " UI Layout {{{
 set number              " show line numbers
@@ -125,6 +126,8 @@ let g:ctrlp_custom_ignore = '\vbuild/|dist/|venv/|target/|\.(o|swp|pyc|egg)$'
 let g:syntastic_python_python_exec = 'python3'
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_c_include_dirs = ['/opt/unimrcp/include']
+let g:syntastic_c_check_header = 1
 " }}}
 " AutoGroups {{{
 augroup configgroup
@@ -166,6 +169,12 @@ let g:airline_right_sep = ''
 let g:airline_right_sep = ''
 " }}}
 " Custom Functions {{{
+autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | q! | endif
+let NERDTreeIgnore = ['\~$','\.d$[[dir]]','\.o$[[file]]','\.pyc$[[file]]']
+" }}}
+" Custom Functions {{{
 function! ToggleNumber()
     if(&relativenumber == 1)
         set norelativenumber
@@ -173,8 +182,7 @@ function! ToggleNumber()
     else
         set relativenumber
     endif
-endfunc
-
+endfunction
 " strips trailing whitespace at the end of files. this
 " is called on buffer write in the autogroup above.
 function! <SID>StripTrailingWhitespaces()
@@ -186,7 +194,6 @@ function! <SID>StripTrailingWhitespaces()
     let @/=_s
     call cursor(l, c)
 endfunction
-
 function! <SID>CleanFile()
     " Preparation: save last search, and cursor position.
     let _s=@/
