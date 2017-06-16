@@ -37,9 +37,10 @@ call plug#end()
 " }}}
 " Colors {{{
 set t_Co=256
+set term=screen-256color
 syntax enable           " enable syntax processing
 silent! colorscheme badwolf
-silent! set termguicolors
+"silent! set termguicolors
 " }}}
 " Misc {{{
 set backspace=indent,eol,start
