@@ -20,8 +20,9 @@ Plug 'vim-syntastic/syntastic'
 Plug 'sjl/badwolf'
 Plug 'rust-lang/rust.vim'
 Plug 'will133/vim-dirdiff'
-Plug 'chrisbra/vim-diff-enhanced'
+"Plug 'chrisbra/vim-diff-enhanced'
 Plug 'scrooloose/nerdtree'
+Plug 'tmux-plugins/vim-tmux'
 "Plug 'derekwyatt/vim-scala'
 "Plug 'janko-m/vim-test'
 "Plug 'keith/swift.vim'
@@ -37,10 +38,10 @@ call plug#end()
 " }}}
 " Colors {{{
 set t_Co=256
-set term=screen-256color
+set term=xterm-256color
 syntax enable           " enable syntax processing
 silent! colorscheme badwolf
-"silent! set termguicolors
+silent! set termguicolors
 " }}}
 " Misc {{{
 set backspace=indent,eol,start
@@ -62,7 +63,7 @@ filetype indent on
 filetype plugin on
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
-set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+silent! set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 set nolist
 " }}}
 " UI Layout {{{
@@ -216,8 +217,8 @@ endif
 " }}}
 " vim-diff-enhanced {{{
 " started In Diff-Mode set diffexpr (plugin not loaded yet)
-if &diff
-    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
-endif
+"if &diff
+"    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
+"endif
 " }}}
 " vim:foldmethod=marker:foldlevel=0
