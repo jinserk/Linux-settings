@@ -215,6 +215,11 @@ if &diff
     map [ [c
 endif
 " }}}
+" Last position {{{
+if has("autocmd")
+	  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+" }}}
 " vim-diff-enhanced {{{
 " started In Diff-Mode set diffexpr (plugin not loaded yet)
 "if &diff
