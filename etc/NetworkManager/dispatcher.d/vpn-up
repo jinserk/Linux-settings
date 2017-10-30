@@ -1,0 +1,15 @@
+#! /bin/bash
+
+REQUIRED_CONNECTION1_NAME="Wired connection 1"
+REQUIRED_CONNECTION2_NAME="wifi"
+VPN_CONNECTION_NAME="Home"
+
+chk_status=$(nmcli con show --active)
+echo ${chk_status} | grep "${REQUIRED_CONNECTION1_NAME}\|${REQUIRED_CONNECTION2_NAME}" &> /dev/null
+active_con=$?
+echo ${chk_status} | grep "${VPN_CONNECTION_NAME}" &> /dev/null
+active_vpn=$?
+if [ ${active_con} == 0 -a ${active_vpn} != 0 ]; then
+    nmcli con up id "${VPN_CONNECTION_NAME}"
+fi
+
