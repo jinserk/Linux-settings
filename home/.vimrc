@@ -16,7 +16,8 @@ Plug 'vim-scripts/a.vim'
 Plug 'vim-scripts/Smart-Tabs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 Plug 'sjl/badwolf'
 Plug 'rust-lang/rust.vim'
 Plug 'will133/vim-dirdiff'
@@ -125,11 +126,11 @@ let g:ctrlp_custom_ignore = '\vbuild/|dist/|venv/|target/|\.(o|swp|pyc|egg)$'
 " }}}
 " Syntastic {{{
 "let g:syntastic_ignore_files = ['.java$']
-let g:syntastic_python_python_exec = 'python3'
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501'
-let g:syntastic_c_include_dirs = ['/opt/unimrcp/include']
-let g:syntastic_c_check_header = 1
+"let g:syntastic_python_python_exec = 'python3'
+"let g:syntastic_python_checkers = ['flake8']
+"let g:syntastic_python_flake8_args='--ignore=E501'
+"let g:syntastic_c_include_dirs = ['/opt/unimrcp/include']
+"let g:syntastic_c_check_header = 1
 " }}}
 " AutoGroups {{{
 augroup configgroup
@@ -219,6 +220,14 @@ endif
 if has("autocmd")
 	  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+" }}}
+" ALE {{{
+let g:ale_completion_enabled = 1
+let g:airline#extensions#ale#enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_python_flake8_options = '--ignore=E121,E501'
 " }}}
 " vim-diff-enhanced {{{
 " started In Diff-Mode set diffexpr (plugin not loaded yet)
