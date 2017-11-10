@@ -54,8 +54,7 @@ set tabstop=4           " 4 space tab
 set softtabstop=4       " 4 space tab
 set shiftwidth=4
 set modelines=1
-"set expandtab           " use spaces for tabs
-set noexpandtab           " use spaces for tabs
+set expandtab           " use spaces for tabs
 set autoindent
 set cindent
 set smartindent
@@ -140,11 +139,12 @@ augroup configgroup
     autocmd BufEnter *.cls setlocal filetype=java
     autocmd BufEnter *.zsh-theme setlocal filetype=zsh
     autocmd BufEnter Makefile setlocal noexpandtab
-    autocmd BufEnter *.sh setlocal tabstop=2
-    autocmd BufEnter *.sh setlocal shiftwidth=2
-    autocmd BufEnter *.sh setlocal softtabstop=2
+    "autocmd BufEnter *.sh setlocal tabstop=2
+    "autocmd BufEnter *.sh setlocal shiftwidth=2
+    "autocmd BufEnter *.sh setlocal softtabstop=2
 	"autocmd BufEnter *.py setlocal tabstop=4
     autocmd BufEnter *.md setlocal ft=markdown
+    autocmd BufEnter *.sh setlocal ts=2 sts=2 sw=2 et ai pi si nolist
     autocmd Filetype python setlocal ts=4 sts=4 sw=4 et ai pi si ci nolist
     autocmd Filetype xml setlocal ts=2 sts=2 sw=2 et
     autocmd BufEnter *.c,*.cc,*.cpp,*.h,*.hh,*.hpp setlocal ts=4 sts=0 sw=4 noet nosi ai pi ci cindent
