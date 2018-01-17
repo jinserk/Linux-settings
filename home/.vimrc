@@ -24,6 +24,8 @@ Plug 'will133/vim-dirdiff'
 "Plug 'chrisbra/vim-diff-enhanced'
 Plug 'scrooloose/nerdtree'
 Plug 'tmux-plugins/vim-tmux'
+Plug 'Shougo/vimshell.vim'
+Plug 'Shougo/vimproc.vim'
 "Plug 'derekwyatt/vim-scala'
 "Plug 'janko-m/vim-test'
 "Plug 'keith/swift.vim'
@@ -145,6 +147,7 @@ augroup configgroup
 	"autocmd BufEnter *.py setlocal tabstop=4
     autocmd BufEnter *.md setlocal ft=markdown
     autocmd BufEnter *.sh setlocal ts=2 sts=2 sw=2 et ai pi si nolist
+    autocmd BufEnter *.pl setlocal ts=2 sts=2 sw=2 et ai pi si nolist
     autocmd Filetype python setlocal ts=4 sts=4 sw=4 et ai pi si ci nolist
     autocmd Filetype xml setlocal ts=2 sts=2 sw=2 et
     autocmd BufEnter *.c,*.cc,*.cpp,*.h,*.hh,*.hpp setlocal ts=4 sts=0 sw=4 noet nosi ai pi ci cindent
