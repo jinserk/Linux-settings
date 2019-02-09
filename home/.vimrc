@@ -26,6 +26,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'Shougo/vimshell.vim'
 Plug 'Shougo/vimproc.vim'
+Plug 'lambdalisue/vim-pyenv'
 "Plug 'derekwyatt/vim-scala'
 "Plug 'janko-m/vim-test'
 "Plug 'keith/swift.vim'
@@ -37,6 +38,8 @@ Plug 'Shougo/vimproc.vim'
 "Plug 'tpope/vim-abolish'
 "Plug 'tpope/vim-fugitive'
 "Plug 'vimwiki/vimwiki'
+Plug 'tomlion/vim-solidity'
+Plug 'Vvkmnn/vim-vyper'
 call plug#end()
 " }}}
 " Colors {{{
@@ -173,6 +176,9 @@ let g:airline_left_sep = ''
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_sep = ''
+" }}}
+" VimShell {{{
+"let g:vimshell_prompt_expr = 'escape(fnamemodify(getcwd(), ":~")." $", "\\[]()?! ")." "'
 " }}}
 " Custom Functions {{{
 autocmd StdinReadPre * let s:std_in=1

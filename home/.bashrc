@@ -57,8 +57,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 # git bash completion and prompt
-source ~/dev/bin/git-completion.bash
-source ~/dev/bin/git-prompt.sh
+source ~/.local/bin/git-completion.bash
+source ~/.local/bin/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 if [ "$color_prompt" = yes ]; then
@@ -128,16 +128,19 @@ fi
 set -o vi
 
 # set path
-export PATH=$HOME/dev/bin:$PATH
-export LD_LIBRARY_PATH=$HOME/dev/lib:$LD_LIBRARY_PATH
+export PATH=$HOME/.local/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 
-# virtualenv
-export WORKON_HOME=$HOME/.virtualenvs
+# pyenv
+export PATH="/home/jinserk/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
-# set bazel path
-export PATH=$HOME/work/bazel/output:$PATH
+# rust/cargo
+source $HOME/.cargo/env
 
-# jdk/jre setting
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp'
-export JAVA_FONTS=/usr/share/fonts/truetype
+# node.js/nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
