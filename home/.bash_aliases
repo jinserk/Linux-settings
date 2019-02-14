@@ -1,3 +1,5 @@
 alias update='sudo apt update'
 alias upgrade='sudo apt --purge dist-upgrade && sudo apt --purge autoremove && sudo apt autoclean'
-alias pip_upgrade="pip list -o --format=freeze | awk -F'=' '{ print $1 }' | xargs pip install --upgrade"
+alias pip_upgrade='pip list -o --format=freeze | awk -F"=" "{ print $1 }" | xargs pip install --upgrade'
+alias run_synergys='synergys --daemon -c ~/.synergy.conf -n jbaik-dev --restart -l ~/.synergy/log.txt'
+alias run_synergyc='synergyc --daemon -n venus --restart -l ~/.synergy/log.txt'
