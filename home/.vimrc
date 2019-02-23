@@ -39,7 +39,8 @@ Plug 'lambdalisue/vim-pyenv'
 "Plug 'tpope/vim-fugitive'
 "Plug 'vimwiki/vimwiki'
 Plug 'tomlion/vim-solidity'
-Plug 'Vvkmnn/vim-vyper'
+Plug 'jacqueswww/vim-vyper'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 " }}}
 " Colors {{{
