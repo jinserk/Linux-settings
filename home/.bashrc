@@ -136,17 +136,18 @@ if [[ -d "$HOME/.pyenv" ]]; then
     export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
-if
+fi
 
 # rust/cargo
-[[ -d $HOME/.cargo ]] && source $HOME/.cargo/env
+[[ -d "$HOME/.cargo" ]] && source "$HOME/.cargo/env"
 
 # node.js/nvm
 if [[ -d "$HOME/.nvm" ]]; then
     export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+    [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
 # tmuxinator
 export EDITOR=vim
+
