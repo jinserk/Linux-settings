@@ -41,7 +41,7 @@ Plug 'lambdalisue/vim-pyenv'
 Plug 'tomlion/vim-solidity'
 Plug 'jacqueswww/vim-vyper'
 Plug 'pangloss/vim-javascript'
-Plug 'mwx/vim-jsx'
+Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 call plug#end()
 " }}}
