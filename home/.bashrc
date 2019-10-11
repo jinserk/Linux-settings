@@ -131,6 +131,30 @@ set -o vi
 export PATH=$HOME/.local/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 
+# RDKit
+#export RDBASE=$HOME/works/kyulux/rdkit
+#export PYTHONPATH=$RDBASE:$PYTHONPATH
+#export LD_LIBRARY_PATH=$RDBASE/lib:$LD_LIBRARY_PATH
+
+# CUDA settings
+#export CUDA_HOME=/usr/local/cuda
+#export CUDADIR=$CUDA_HOME
+#export CUDA_LIB_DIR=$CUDA_HOME/lib64
+#export CUDA_INCLUDE_DIR=$CUDA_HOME/include
+
+#export CUDNN_HOME=/usr/local/cudnn
+#export CUDNN_LIB_DIR=$CUDNN_HOME/lib64
+#export CUDNN_INCLUDE_DIR=$CUDNN_HOME/include
+
+#export NCCL_HOME=/usr/local/nccl
+#export NCCL_ROOT_DIR=$NCCL_HOME
+#export NCCL_LIB_DIR=$NCCL_HOME/lib
+#export NCCL_SYSTEM_DIR=$NCCL_HOME/lib
+#export NCCL_INCLUDE_DIR=$NCCL_HOME/include
+
+#export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CUDA_LIB_DIR:$CUDNN_LIB_DIR:$NCCL_LIB_DIR
+#export C_INCLUDE_PATH=$C_INCLUDE_PATH:$CUDA_INCLUDE_DIR:$CUDNN_INCLUDE_DIR:$NCCL_INCLUDE_DIR
+
 # pyenv
 if [[ -d "$HOME/.pyenv" ]]; then
     export PYTHON_CONFIGURE_OPTS="--enable-shared"
@@ -148,6 +172,9 @@ if [[ -d "$HOME/.nvm" ]]; then
     [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"  # This loads nvm
     [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
+
+# go/gvm
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # tmuxinator
 export EDITOR=vim

@@ -24,8 +24,8 @@ Plug 'will133/vim-dirdiff'
 "Plug 'chrisbra/vim-diff-enhanced'
 Plug 'scrooloose/nerdtree'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'Shougo/vimshell.vim'
-Plug 'Shougo/vimproc.vim'
+"Plug 'Shougo/vimshell.vim'
+"Plug 'Shougo/vimproc.vim'
 Plug 'lambdalisue/vim-pyenv'
 "Plug 'derekwyatt/vim-scala'
 "Plug 'janko-m/vim-test'
@@ -47,10 +47,10 @@ call plug#end()
 " }}}
 " Colors {{{
 set t_Co=256
-set term=xterm-256color
+"set term=xterm-256color
 syntax enable           " enable syntax processing
 silent! colorscheme badwolf
-silent! set termguicolors
+"silent! set termguicolors
 " }}}
 " Misc {{{
 set backspace=indent,eol,start
@@ -235,7 +235,7 @@ if has("autocmd")
 endif
 " }}}
 " ALE {{{
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
@@ -247,5 +247,9 @@ let g:ale_python_flake8_options = '--ignore=E121,E501'
 "if &diff
 "    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
 "endif
+" }}}
+" vim-json {{{
+let g:vim_json_syntax_conceal = 0
+au BufRead,BufNewFile,BufReadPost *.json set syntax=json
 " }}}
 " vim:foldmethod=marker:foldlevel=0
