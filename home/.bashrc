@@ -133,6 +133,7 @@ export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 
 # pyenv
 if [[ -d "$HOME/.pyenv" ]]; then
+    export PYTHON_CONFIGURE_OPTS="--enable-shared"
     export PATH="$HOME/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
@@ -151,3 +152,5 @@ fi
 # tmuxinator
 export EDITOR=vim
 
+# direnv
+eval "$(direnv hook bash)"
