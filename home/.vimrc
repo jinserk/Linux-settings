@@ -3,8 +3,7 @@
 " 1. check you have git and vim latest version
 " 2. copy this file to $HOME/.vimrc
 " 3. install Minimalist Vim Plugin Manager
-"    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-"       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " 4. run vim and type :PlugInstall in normal mode
 "
 " Preset {{{
