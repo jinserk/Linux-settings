@@ -25,7 +25,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tmux-plugins/vim-tmux'
 "Plug 'Shougo/vimshell.vim'
 "Plug 'Shougo/vimproc.vim'
-Plug 'lambdalisue/vim-pyenv'
+"Plug 'lambdalisue/vim-pyenv'
 "Plug 'derekwyatt/vim-scala'
 "Plug 'janko-m/vim-test'
 "Plug 'keith/swift.vim'
@@ -42,6 +42,10 @@ Plug 'jacqueswww/vim-vyper'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'fannheyward/coc-pyright'
+Plug 'nvie/vim-flake8'
+Plug 'evanleck/vim-svelte'
 call plug#end()
 " }}}
 " Colors {{{
@@ -153,7 +157,7 @@ augroup configgroup
     autocmd BufEnter *.md setlocal ft=markdown
     autocmd BufEnter *.sh setlocal ts=2 sts=2 sw=2 et ai pi si nolist
     autocmd BufEnter *.pl setlocal ts=2 sts=2 sw=2 et ai pi si nolist
-    autocmd BufEnter *.js setlocal ts=2 sts=2 sw=2 et ai pi si nolist
+    autocmd BufEnter *.js,*.jsx,*.ts,*.tsx,*.json setlocal ts=2 sts=2 sw=2 et ai pi si nolist
     autocmd Filetype python setlocal ts=4 sts=4 sw=4 et ai pi si ci nolist
     autocmd Filetype xml setlocal ts=2 sts=2 sw=2 et
     autocmd BufEnter *.c,*.cc,*.cpp,*.h,*.hh,*.hpp setlocal ts=4 sts=0 sw=4 noet nosi ai pi ci cindent
@@ -251,4 +255,10 @@ let g:ale_python_flake8_options = '--ignore=E121,E501'
 let g:vim_json_syntax_conceal = 0
 au BufRead,BufNewFile,BufReadPost *.json set syntax=json
 " }}}
+" disable indent when comment {{{
+"autocmd BufNewFile,BufReadPost * if &filetype == "python" | set indentkeys-=0# | endif
+"autocmd BufNewFile,BufReadPost * if &filetype == "yaml" | set expandtab shiftwidth=2 indentkeys-=0# | endif
+    set fo-=or
+" }}}
 " vim:foldmethod=marker:foldlevel=0
+" 
